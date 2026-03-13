@@ -30,8 +30,8 @@
 | `autoRetry` | confirm | 是 | 失败自动重试开关 |
 | `chunkSizeMB` | input | 是 | 分块大小（MB），默认 `8`，建议 `4~16`（仅 telegram/discord 分块时使用） |
 
-![1](screenshot\1.png)
-![2](screenshot\2.png)
+![1](https://raw.githubusercontent.com/Nahuimi/picgo-plugin-cfbed-uploader/refs/heads/main/screenshot/1.png)
+![2](https://raw.githubusercontent.com/Nahuimi/picgo-plugin-cfbed-uploader/refs/heads/main/screenshot/2.png)
 
 ## 分块上传支持
 
