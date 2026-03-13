@@ -1,0 +1,26 @@
+{
+  "name": "picgo-plugin-cfbed-uploader",
+  "version": "1.0.0",
+  "description": "PicGo uploader plugin for CloudFlare ImgBed API",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [
+    "picgo",
+    "picgo-plugin",
+    "picgo-gui-plugin",
+    "cloudflare-imgbed",
+    "cfbed"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourname/picgo-plugin-cfbed-uploader.git"
+  },
+  "homepage": "https://github.com/yourname/picgo-plugin-cfbed-uploader",
+  "author": "",
+  "license": "MIT"
+}
