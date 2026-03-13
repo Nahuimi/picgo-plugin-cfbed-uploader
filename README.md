@@ -30,7 +30,8 @@
 | `autoRetry` | confirm | 是 | 失败自动重试开关 |
 | `chunkSizeMB` | input | 是 | 分块大小（MB），默认 `8`，建议 `4~16`（仅 telegram/discord 分块时使用） |
 
-> 说明：为避免 PicGo 配置面板切换渠道后不即时刷新，这两个参数固定显示；插件内部会按渠道自动决定是否实际使用。
+![1](screenshot\1.png)
+![2](screenshot\2.png)
 
 ## 分块上传支持
 

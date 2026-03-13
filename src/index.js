@@ -28,7 +28,7 @@ const config = (ctx) => {
       type: 'input',
       default: userConfig.host || '',
       required: true,
-      message: 'CloudFlare ImgBed 站点地址，例如: https://img.example.com',
+      message: 'CloudFlare ImgBed 站点地址，例如：https://img.example.com',
       alias: '站点地址'
     },
     {
@@ -36,21 +36,27 @@ const config = (ctx) => {
       type: 'password',
       default: userConfig.token || '',
       required: false,
-      message: 'API Token（需 upload 权限）',
-      alias: 'API Token'
+      message: 'API 令牌（需要上传权限）',
+      alias: 'API 令牌'
     },
     {
       name: 'authCode',
       type: 'input',
       default: userConfig.authCode || '',
       required: false,
-      message: '上传认证码（可选，不填则使用 token）',
+      message: '上传认证码（可选，不填则使用令牌）',
       alias: '上传认证码'
     },
     {
       name: 'uploadChannel',
       type: 'list',
-      choices: ['telegram', 'cfr2', 's3', 'discord', 'huggingface'],
+      choices: [
+        { name: 'Telegram', value: 'telegram' },
+        { name: 'Cloudflare R2', value: 'cfr2' },
+        { name: 'S3', value: 's3' },
+        { name: 'Discord', value: 'discord' },
+        { name: 'Hugging Face', value: 'huggingface' }
+      ],
       default: userConfig.uploadChannel || DEFAULT_CHANNEL,
       required: true,
       message: '上传渠道',
@@ -69,13 +75,18 @@ const config = (ctx) => {
       type: 'input',
       default: userConfig.uploadFolder || '',
       required: false,
-      message: '上传目录（可选，例如: img/test）',
+      message: '上传目录（可选，例如：img/test）',
       alias: '上传目录'
     },
     {
       name: 'uploadNameType',
       type: 'list',
-      choices: ['default', 'index', 'origin', 'short'],
+      choices: [
+        { name: '前缀_原名', value: 'default' },
+        { name: '仅前缀', value: 'index' },
+        { name: '仅原名', value: 'origin' },
+        { name: '短链接', value: 'short' }
+      ],
       default: userConfig.uploadNameType || 'default',
       required: true,
       message: '文件命名方式',
@@ -84,7 +95,10 @@ const config = (ctx) => {
     {
       name: 'returnFormat',
       type: 'list',
-      choices: ['default', 'full'],
+      choices: [
+        { name: '默认', value: 'default' },
+        { name: '完整链接', value: 'full' }
+      ],
       default: userConfig.returnFormat || 'default',
       required: true,
       message: '返回链接格式',
@@ -103,7 +117,7 @@ const config = (ctx) => {
       type: 'confirm',
       default: userConfig.serverCompress !== false,
       required: true,
-      message: '服务端压缩（仅 telegram 渠道有效）',
+      message: '服务端压缩（仅 Telegram 渠道有效）',
       alias: '服务端压缩'
     },
     {
@@ -111,7 +125,7 @@ const config = (ctx) => {
       type: 'input',
       default: userConfig.chunkSizeMB || String(DEFAULT_CHUNK_SIZE_MB),
       required: true,
-      message: '分块大小（MB），默认 20',
+      message: '分块大小（MB）',
       alias: '分块大小'
     }
   ]
